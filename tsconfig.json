@@ -10,7 +10,7 @@
   "include": [
     "src/**/*.ts",
     "express.d.ts",
-    "src/middlewares/**/*.ts",
+    "src/functions/**/*.ts",
     "src/models/**/*.ts",
     "src/routes/**/*.ts"
   ],
