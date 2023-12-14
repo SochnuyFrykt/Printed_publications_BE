@@ -23,7 +23,8 @@ router.post('/login', (req: Request, res: Response) => {
   
           // В данном примере, мы сравниваем просто пароль
           if (user.password === password) {
-            res.json({ message: 'Вход успешен' });
+            res.json({ message: 'Вход успешен', userId: user.id, 
+            username: user.username, password: user.password });
           } else {
             res.status(401).json({ message: 'Неверный пароль' });
           }
