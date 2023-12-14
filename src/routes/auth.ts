@@ -8,9 +8,9 @@ const router = Router();
 
 
 router.post('/login', (req: Request, res: Response) => {
-    const { username, password }: User = req.body;
+    const { email, password }: User = req.body;
   
-    db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
+    db.query('SELECT * FROM user WHERE email = ?', [email], (err, results) => {
       if (err) {
         console.error('Ошибка входа:', err);
         res.status(500).json({ message: 'Ошибка входа' });
@@ -24,7 +24,7 @@ router.post('/login', (req: Request, res: Response) => {
           // В данном примере, мы сравниваем просто пароль
           if (user.password === password) {
             res.json({ message: 'Вход успешен', userId: user.id, 
-            username: user.username, password: user.password });
+            email: user.email, password: user.password });
           } else {
             res.status(401).json({ message: 'Неверный пароль' });
           }

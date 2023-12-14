@@ -10,9 +10,9 @@ router.post('/deleteAccount', async (req: Request, res: Response) => {
 
   try {
     // Проверяем, существует ли пользователь с указанным userId
-    const userResult = await db.query('SELECT * FROM users WHERE id = ?', [userId]);
+    const userResult = await db.query('SELECT * FROM user WHERE id = ?', [userId]);
     if (userResult.values?.length === 1) {
-      await db.query('DELETE FROM users WHERE id = ?', [userId]);
+      await db.query('DELETE FROM user WHERE id = ?', [userId]);
 
       return res.status(200).json({ message: 'Аккаунт успешно удален' });
     } else {

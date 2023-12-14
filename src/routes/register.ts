@@ -7,11 +7,11 @@ import config from 'config';
 const router = Router();
 
 router.post('/register', (req: Request, res: Response) => {
-    const { username, password }: User = req.body;
+    const { email, password }: User = req.body;
   
-    const user: User = { username, password };
+    const user: User = { email, password };
   
-    db.query('INSERT INTO users SET ?', user, (err) => {
+    db.query('INSERT INTO user SET ?', user, (err) => {
       if (err) {
         console.error('Ошибка регистрации:', err);
         res.status(500).json({ message: 'Ошибка регистрации' });

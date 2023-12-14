@@ -4,7 +4,7 @@ const dbConfig = {
     host: 'localhost',
     user: 'root',
     password: 'admin',
-    database: 'mydatabase',
+    database: 'bookscanDB',
   };
 
 const db = mysql.createConnection(dbConfig);

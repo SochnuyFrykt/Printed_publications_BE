@@ -10,9 +10,9 @@ router.post('/changeEmail', async (req: Request, res: Response) => {
 
   try {
     // Проверяем, существует ли пользователь с указанным userId
-    const userResult = await db.query('SELECT * FROM users WHERE id = ?', [userId]);
+    const userResult = await db.query('SELECT * FROM user WHERE id = ?', [userId]);
     if (userResult.values?.length === 1) {
-      await db.query('UPDATE users SET username = ? WHERE id = ?', [newEmail, userId]);
+      await db.query('UPDATE user SET email = ? WHERE id = ?', [newEmail, userId]);
 
       return res.status(200).json({ message: 'Почта успешно изменена' });
     } else {
