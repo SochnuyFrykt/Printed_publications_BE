@@ -4,6 +4,9 @@ import registerRouter from './routes/register'
 import changePassword from './functions/changePassword'
 import changeEmail from './functions/changeEmail'
 import deleteAccount from './functions/deleteAccount'
+import loadList from './functions/loadList'
+import editBook from './functions/editBook'
+import deleteBook from './functions/deleteBook'
 import cors from 'cors';
 
 const app = express();
@@ -15,6 +18,9 @@ app.use('/register', registerRouter)
 app.use('/cp',changePassword)
 app.use(changeEmail)
 app.use(deleteAccount)
+app.use(loadList)
+app.use(editBook)
+app.use(deleteBook)
 
 
 const PORT = process.env.PORT || 5000;
