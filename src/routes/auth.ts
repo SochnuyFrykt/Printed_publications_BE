@@ -17,11 +17,7 @@ router.post('/login', (req: Request, res: Response) => {
       } else {
         if (results.length > 0) {
           const user: User = results[0];
-  
-          // Здесь вы можете добавить логику проверки пароля
-          // Например, используйте bcrypt для сравнения хешированных паролей
-  
-          // В данном примере, мы сравниваем просто пароль
+          //Добавить логику хэширования пароля. (Позже)
           if (user.password === password) {
             res.json({ message: 'Вход успешен', userId: user.id, 
             email: user.email, password: user.password });

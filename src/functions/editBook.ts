@@ -6,7 +6,7 @@ import config from 'config';
 
 const router = Router();
 
-// Изменяем эндпоинт на /add-book
+
 router.post('/editBook', (req: Request, res: Response) => {
   const {id, author, title, date, city, description, quantity, lbc, udc, ISBN, publication_type }: Book = req.body;
 

@@ -14,32 +14,7 @@ try {
         console.error(error);
         res.status(500).json({ error: 'Internal Server Error' });
       } else {
-        // Преобразование результатов запроса в массив моделей книг
-        // const books: Book[] = userBooksResult.map((bookData: any) => {
-        //   return {
-        //     id: bookData.id,
-        //     id_user: bookData.id_user,
-        //     author: bookData.author,
-        //     title: bookData.title,
-        //     date: new Date(bookData.date),
-        //     city: bookData.city,
-        //     description: bookData.description,
-        //     quantity: bookData.quantity,
-        //     lbc: bookData.lbc,
-        //     udc: bookData.udc,
-        //     ISBN: bookData.ISBN,
-        //     publication_type: bookData.publication_type,
-        //   };
-        // });
-        // const formattedUserBooks = userBooksResult.map((book: Book) => {
-        //     return {
-        //       ...book,
-        //       date: new Date(book.date).toISOString().split('T')[0], // Format date to YYYY-MM-DD
-        //     };
-        //   });
-
         res.json(userBooksResult);
-        // res.json(formattedUserBooks);
       }
     });
   } catch (error) {

@@ -7,6 +7,7 @@ import deleteAccount from './functions/deleteAccount'
 import loadList from './functions/loadList'
 import editBook from './functions/editBook'
 import deleteBook from './functions/deleteBook'
+import deleteAllBooks from './functions/deleteAllBooks'
 import cors from 'cors';
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(deleteAccount)
 app.use(loadList)
 app.use(editBook)
 app.use(deleteBook)
+app.use(deleteAllBooks)
 
 
 const PORT = process.env.PORT || 5000;
